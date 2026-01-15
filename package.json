@@ -8,7 +8,7 @@
     },
 
     "jest": {
-        "testEnvironmente" : "node"
+        "testEnvironment" : "node"
     },
 
     "dependencies": {
