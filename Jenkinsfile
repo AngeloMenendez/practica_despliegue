@@ -27,7 +27,7 @@ pipeline {
                 expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
             }
             steps {
-                sh 'docker build -t hola-mundo-node:latest .'
+                sh 'docker build -t hola-mundo-node:latest .' 
             }
         }
 
