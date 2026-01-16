@@ -111,14 +111,12 @@ app.get('/users/:id', (req, res) => {
     res.json({ user });
 });
 
-
-// se agregó para el test
+// Exportar la app para que pueda ser usada en el test
 module.exports = app;
 
-
-// Iniciar el servidor
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
-
-
-});
+// Iniciar el servidor (solo al correr la aplicación directamente, no en los tests)
+if (require.main === module) {
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
+    });
+}
